@@ -20,16 +20,23 @@ public class LeetCode884 {
             if(!map.containsKey(str))
             {
                 map.put(str,Boolean.FALSE);
-                list.add(str);
+            }else{
+                map.put(str,Boolean.TRUE);
             }
         }
         for (String str:strB) {
             if(!map.containsKey(str)){
-                    list.add(str);
+                list.add(str);
             }else{
-                list.remove(str);
+                map.put(str,Boolean.TRUE);
             }
         }
+        for (Map.Entry<String,Boolean> entry:map.entrySet()) {
+            if(!entry.getValue()){
+                list.add(entry.getKey());
+            }
+        }
+
         String[] strings = new String[list.size()];
         list.toArray(strings);
         return strings;
