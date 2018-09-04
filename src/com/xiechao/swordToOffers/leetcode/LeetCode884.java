@@ -8,7 +8,8 @@ import java.util.*;
  * @author: xiehcao
  * @Date : 2018/9/4
  * @Time : 16:21
- * @description :
+ * @description :求只在一个字符串数组力出现一次的单词
+ * 还是借助map是来实现
  */
 public class LeetCode884 {
     public String[] uncommonFromSentences(String A,String B){
@@ -26,7 +27,7 @@ public class LeetCode884 {
         }
         for (String str:strB) {
             if(!map.containsKey(str)){
-                list.add(str);
+                map.put(str,Boolean.FALSE);
             }else{
                 map.put(str,Boolean.TRUE);
             }
