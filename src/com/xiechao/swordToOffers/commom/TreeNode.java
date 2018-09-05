@@ -7,9 +7,9 @@ package com.xiechao.swordToOffers.commom;
  * @description :
  */
 public class TreeNode<T> {
-    private T data;
-    private TreeNode<T> right;
-    private TreeNode<T> left;
+    public T data;
+    public TreeNode<T> right;
+    public TreeNode<T> left;
 
     /**
      *

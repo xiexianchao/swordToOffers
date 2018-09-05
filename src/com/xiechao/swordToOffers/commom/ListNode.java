@@ -6,15 +6,15 @@ package com.xiechao.swordToOffers.commom;
  * @Time : 16:54
  * @description :
  */
-public class LinkNode<T> {
-    private T value;
-    private LinkNode<T> next;
+public class ListNode<T> {
+    public T value;
+    public ListNode<T> next;
 
     /**
      * value = null
      * next = null
      * */
-    public LinkNode(){
+    public ListNode(){
         value = null;
         next = null;
     }
@@ -23,12 +23,12 @@ public class LinkNode<T> {
      * @param value
      * @description: next = null
      */
-    public LinkNode(T value){
+    public ListNode(T value){
         this.value = value;
         this.next = null;
     }
 
-    public LinkNode(T value, LinkNode<T> next) {
+    public ListNode(T value, ListNode<T> next) {
         this.value = value;
         this.next = next;
     }
