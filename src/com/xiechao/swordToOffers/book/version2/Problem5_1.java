@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.book;
+package com.xiechao.swordToOffers.book.version2;
 
 import org.junit.Test;
 
