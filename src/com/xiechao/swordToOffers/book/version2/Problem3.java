@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.book;
+package com.xiechao.swordToOffers.book.version2;
 
 import com.sun.org.apache.regexp.internal.RESyntaxException;
 import org.junit.Test;

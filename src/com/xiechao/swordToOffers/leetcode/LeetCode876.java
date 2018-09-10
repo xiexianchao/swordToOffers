@@ -14,7 +14,7 @@ public class LeetCode876 {
     }
     public ListNode middleNode(ListNode head) {
 
-
+        return  null;
 
     }
 }

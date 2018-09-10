@@ -39,7 +39,7 @@ public class Problem12 {
             position++;
 
             hasPath = hasPathCore(matrix,i,j-1,position,visited,str);
-            
+
 
         }
         return hasPath;

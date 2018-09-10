@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.book;
+package com.xiechao.swordToOffers.book.version2;
 
 
 import com.xiechao.swordToOffers.commom.ListNode;
@@ -36,8 +36,10 @@ public class Problem6 {
         ArrayList<Integer> list = new ArrayList<>();
         if(listNode == null)
             return list;
-
-
+        printListFromTailToHead2(listNode.next);
+        list.addAll(printListFromTailToHead2(listNode.next));
+        list.add((Integer) listNode.value);
+        return list;
     }
 
 
