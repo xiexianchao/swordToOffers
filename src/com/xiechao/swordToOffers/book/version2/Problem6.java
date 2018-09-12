@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.book.version2;
+package com.xiechao.swordToOffers.book;
 
 
 import com.xiechao.swordToOffers.commom.ListNode;
@@ -31,22 +31,19 @@ public class Problem6 {
         }
         return list;
     }
-    //递归
+    //递归  牛客网测试15ms
     public ArrayList<Integer> printListFromTailToHead2(ListNode listNode){
         ArrayList<Integer> list = new ArrayList<>();
         if(listNode == null)
             return list;
-        printListFromTailToHead2(listNode.next);
-        list.addAll(printListFromTailToHead2(listNode.next));
+        if(listNode.next != null)
+            list.addAll(printListFromTailToHead2(listNode.next));
         list.add((Integer) listNode.value);
         return list;
     }
 
 
-    @Test
-    public void test(){
 
-    }
 
 
 }
