@@ -9,6 +9,9 @@ import java.util.Arrays;
  * @description :求岛屿的个数
  */
 public class LeetCode200 {
+
+    //自己的方法 8ms
+
     public int numIslands(char[][] grid) {
         if( null == grid || grid.length <=0 || grid[0] == null ||
                 grid[0].length <=0)
@@ -44,6 +47,35 @@ public class LeetCode200 {
             isIsland(grid,row,col-1,rows,cols,visited);
         }
         return isIsland;
+    }
+
+    //leetCode大神 4ms
+
+    public int numIslands2(char[][] grid){
+        if( null == grid || grid.length <=0 || grid[0] == null ||
+                grid[0].length <=0)
+            return 0;
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int result = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if(grid[i][j] == '1') {
+                    result++;
+                    dfs(grid,i,j,rows,cols);
+                }
+            }
+        }
+        return result;
+    }
+    private void dfs(char[][] grid,int row,int col,int rows,int cols){
+        if(row >= 0 && row < rows && col >=0 && col < cols && (grid[row][col] =='1')){
+            grid[row][col] = 'x';
+            dfs(grid,row-1,col,rows,cols);
+            dfs(grid,row+1,col,rows,cols);
+            dfs(grid,row,col-1,rows,cols);
+            dfs(grid,row,col+1,rows,cols);
+        }
     }
 
 }
