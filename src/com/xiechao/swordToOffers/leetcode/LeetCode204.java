@@ -45,6 +45,8 @@ public class LeetCode204 {
         }
         return count;
     }
+
+
     @Test
     public void test(){
         System.out.println(countPrimes2(1500000));

@@ -32,8 +32,24 @@ public class LeetCode14 {
         }
         return sb.toString();
     }
+
+    //LeetCode大神 5ms
+    public String longestCommonPrefix2(String[] strs) {
+        if(strs == null || strs.length <= 0) return "";
+        String pre = strs[0];
+        int i = 1;
+        while( i < strs.length){
+            while(strs[i].indexOf(pre) !=0 ){
+                pre = pre.substring(0,pre.length()-1);
+            }
+            i++;
+        }
+        return pre;
+
+    }
+
     @Test
     public void test(){
-        System.out.println(longestCommonPrefix(new String[]{"aca","cba"}));
+        System.out.println(longestCommonPrefix2(new String[]{"flower","flow","flight"}));
     }
 }
