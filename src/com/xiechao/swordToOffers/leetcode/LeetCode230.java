@@ -54,6 +54,7 @@ public class LeetCode230 {
         return res;
 
     }
+    //其实就是中序遍历的变形
     private void kthSmallestCore(TreeNode root,int k){
         if( root != null){
             kthSmallestCore(root.left,k);
