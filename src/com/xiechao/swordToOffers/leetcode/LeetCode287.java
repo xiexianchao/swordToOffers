@@ -1,5 +1,7 @@
 package com.xiechao.swordToOffers.leetcode;
 
+import org.junit.Test;
+
 /**
  * @author: xiehcao
  * @Date : 2018/9/27
@@ -8,6 +10,8 @@ package com.xiechao.swordToOffers.leetcode;
  * 剑指Offer原题
  */
 public class LeetCode287 {
+
+    //2ms 二分查找  O(nlogn)
     public int findDuplicate(int[] nums) {
        if( nums == null || nums.length <=0 ) return -1;
        int start = 1;
@@ -39,6 +43,27 @@ public class LeetCode287 {
         }
         return count;
     }
+
+    // LeetCode大神 1ms 求环的入口地址
+    public int findDuplicate2(int[] nums){
+        if(nums == null || nums.length <=0) return -1;
+        int slow = 0,fast = 0;
+        do{
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }while(nums[slow] != nums[fast]);
+        slow = 0;
+        while( nums[slow] != nums[fast]){
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return nums[slow];
+    }
+    @Test
+    public void test(){
+        System.out.println(findDuplicate2(new int[]{1,2,3,4,2}));
+    }
+
 
 
 }
