@@ -58,7 +58,6 @@ public class Problem37{
     TreeNode Deserialize(String str) {
         if(str == null || index >= (str.length()-1)) return null;
         String[] chars = str.split(",");
-
         return deserializeCore(chars);
     }
     TreeNode deserializeCore(String[] chars){
