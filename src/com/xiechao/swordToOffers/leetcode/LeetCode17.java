@@ -1,5 +1,7 @@
 package com.xiechao.swordToOffers.leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,13 +25,28 @@ public class LeetCode17 {
         map.put('8',"tuv");
         map.put('9',"wxyz");
     }
+    //4ms dfs
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         if(digits == null || digits.length() <=0) return result;
+        String str = "";
         char[] numbers = digits.toCharArray();
-        return null;
-
-
-
+        helper(result,str,numbers,0);
+        return result;
+    }
+    private void helper(List<String> result,String str,char[] numbers,int idx){
+        if(idx == numbers.length){
+            result.add(str);
+            return;
+        }
+        char[] chars = map.get(numbers[idx]).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            helper(result,str + chars[i],numbers,idx+1);
+        }
+        return;
+    }
+    @Test
+    public void test(){
+        System.out.println(letterCombinations("23"));
     }
 }
