@@ -1,9 +1,8 @@
-package com.xiechao.swordToOffers.algorithms.combination;
+package com.xiechao.swordToOffers.algorithms.permutationsAndCombination.combination;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

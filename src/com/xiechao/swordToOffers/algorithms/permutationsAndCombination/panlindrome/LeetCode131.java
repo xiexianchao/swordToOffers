@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.algorithms.panlindrome;
+package com.xiechao.swordToOffers.algorithms.permutationsAndCombination.panlindrome;
 
 import org.junit.Test;
 

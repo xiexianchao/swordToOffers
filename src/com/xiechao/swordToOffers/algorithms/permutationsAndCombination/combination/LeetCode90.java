@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.algorithms.combination;
+package com.xiechao.swordToOffers.algorithms.permutationsAndCombination.combination;
 
 import org.junit.Test;
 
