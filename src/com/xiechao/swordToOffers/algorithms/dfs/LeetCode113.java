@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.algorithms.bfs;
+package com.xiechao.swordToOffers.algorithms.dfs;
 
 import com.xiechao.swordToOffers.algorithms.TreeNode;
 

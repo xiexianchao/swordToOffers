@@ -1,4 +1,4 @@
-package com.xiechao.swordToOffers.algorithms.bfs;
+package com.xiechao.swordToOffers.algorithms.dfs;
 
 import com.xiechao.swordToOffers.algorithms.TreeNode;
 
@@ -7,6 +7,7 @@ import com.xiechao.swordToOffers.algorithms.TreeNode;
  * @Date : 2018/10/18
  * @Time : 17:51
  * @description :Path Sum III
+ * 返回二叉树所有和为target的路径，并不一定要从根节点开始，也并不一定要从叶子结点结束
  */
 public class LeetCode437 {
     int result = 0;
