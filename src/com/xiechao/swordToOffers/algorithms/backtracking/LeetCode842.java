@@ -23,27 +23,29 @@ public class LeetCode842 {
     }
 
     private void helper(List<Integer> result,List<Integer> tempList,String s, int start,boolean[] isOver) {
-        if(isOver[0]) return;
-        if(start == s.length() && tempList.size() >= 3){
+        if(isOver[0]) return;              //得到结果的判断
+        if(start == s.length() && tempList.size() >= 3){    //递归终止
             for (Integer e:tempList) {
                 result.add(e);
             }
             isOver[0] = true;
             return;
+        }else if(start == s.length()){            //递归终止
+            return;
         }
-        for (int i = start; i < s.length() && !isOver[0]; i++) {
-            String str = s.substring(start,i+1);
+        for (int i = start; i < s.length() && !isOver[0]; i++) {        //组合式
+            String str = s.substring(start,i+1);              //获得子串,和之前回文组合那题一样的思路
 
-            if(checkOutMaxValue(s.substring(start,i+1))) continue;
-            Integer temp = Integer.parseInt(str);
-
+            if(checkOutMaxValue(s.substring(start,i+1))) continue; //MAX_VALUE 检查
             if(s.charAt(start) == '0' && str.length() > 1) continue;  //去除前导0
 
-            if(tempList.size() < 2){
+            Integer temp = Integer.parseInt(str);               //转成整型
+            if(tempList.size() < 2){                    //初试元素添加,=2的时候就是插入第三个元素了，所以不包括=2
                 tempList.add(temp);
                 helper(result,tempList,s,i+1,isOver);
                 tempList.remove(tempList.size() - 1);
-            }else if(temp == tempList.get(tempList.size() - 1) + tempList.get(tempList.size() - 2)){
+            }else if(temp == tempList.get(tempList.size() - 1) + tempList.get(tempList.size() - 2)) //斐波那契剪枝
+            {
                 tempList.add(temp);
                 helper(result,tempList,s,i+1,isOver);
                 tempList.remove(tempList.size() - 1);
