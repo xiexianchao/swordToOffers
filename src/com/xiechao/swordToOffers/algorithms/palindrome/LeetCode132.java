@@ -54,8 +54,7 @@ public class LeetCode132 {
         int n = s.length();
         boolean[][] dp = new boolean[n][n]; //dp[i][j] 表示s[i...j]是否是回文
         int[] res = new int[n];             // res[i]表示s[i...n-1]最少的分割次数
-/*
-        for (int i = 0; i < dp.length; i++) {
+/*        for (int i = 0; i < dp.length; i++) {
             dp[i] = new boolean[n];
         }
 */

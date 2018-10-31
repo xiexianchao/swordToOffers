@@ -7,7 +7,7 @@ import org.junit.Test;
  * @Author xiechao
  * @Date 2018/10/29
  * @Time 10:11
- * @Description Longest Palindromic Subsequence
+     * @Description Longest Palindromic Subsequence
  * 求最长回文子序列，子序列不需要连续，而子字符串需要连续
  */
 public class LeetCode516 {

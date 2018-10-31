@@ -7,7 +7,7 @@ import org.junit.Test;
  * @Author xiechao
  * @Date 2018/10/26
  * @Time 8:33
- * @Description TODO
+ * @Description Range Sum Query - Immutable
  */
 public class LeetCode303 {
     class NumArray {

@@ -16,7 +16,6 @@ public class LeetCode39 {
         List<List<Integer>> result = new ArrayList<>();
         if(candidates == null || candidates.length <=0 || target <=0) return result;
         helper(result,new ArrayList<Integer>(),candidates,target,0);
-
         return result;
     }
 
@@ -28,7 +27,6 @@ public class LeetCode39 {
         if(target<0){
             return;
         }
-
         for (int i = start; i < candidates.length; i++) {
 
             tempList.add(candidates[i]);

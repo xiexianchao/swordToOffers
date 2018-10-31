@@ -65,7 +65,6 @@ public class LeetCode77 {
             }
             result.add(tempList);
             return result;
-
         }
         if(k == 1){
             for (int i = 1; i <= n ; i++) {

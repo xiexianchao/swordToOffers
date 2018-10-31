@@ -49,7 +49,6 @@ public class LeetCode78 {
             helper2(result,list,nums,i+1);
             list.remove(list.size()-1);
         }
-
     }
 
 

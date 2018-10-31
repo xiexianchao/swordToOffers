@@ -16,11 +16,6 @@ import org.junit.Test;
  * 如果 i == j-1, s[i~j] 只有两个字符， 如果两个字符相等的话，dp[i][j] = 0 ，不等的话 dp[i][j] = 1
  * 如果 i < j-1, s[i~j] 多于两个字符。如果 s[i] == s[j]， dp[i][j] = dp[i+1][j-1]。 如果 s[i] != s[j]，dp[i][j] = Math.min(dp[i][j-1], dp[i+1][j]) + 1;
  * 求出dp矩阵之后，dp[0][s.length()-1] 就是我们的答案。
- * ---------------------
- * 作者：notHeadache
- * 来源：CSDN
- * 原文：https://blog.csdn.net/notHeadache/article/details/52401231
- * 版权声明：本文为博主原创文章，转载请附上博文链接！
  */
 public class Anonymous {
     int getMin(String s){

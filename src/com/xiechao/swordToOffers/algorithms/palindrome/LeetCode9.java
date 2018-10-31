@@ -14,7 +14,7 @@ import java.util.List;
  * 判断一个数字是否是回文。不能将其转成字符串
  *  一开始想法是：将数字反转重新构建成一个数，但发现会造成溢出,
  *  又发现如果是回文的话，不会溢出
- *  如果是不是回文的话，移除会变成负数，也不会造成误判
+ *  如果是不是回文的话，溢出会变成负数，也不会造成误判
  */
 public class LeetCode9 {
     public boolean isPalindrome(int x) {

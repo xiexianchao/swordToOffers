@@ -63,8 +63,6 @@ public class LeetCode40 {
             helper2(result,tempList,candidates,target-candidates[i],i+1);
             tempList.remove(tempList.size() - 1);
         }
-
-
     }
 
 

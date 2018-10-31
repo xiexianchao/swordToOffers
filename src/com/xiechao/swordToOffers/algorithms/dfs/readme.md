@@ -1,5 +1,5 @@
 ###DFS
-对于easy等级的BFS，大多数都是和树相关
+对于easy等级的DFS，大多数都是和树相关
 LeetCode559 Maximum Depth of N-ary Tree
 
 LeetCode872 Leaf-Similar Trees

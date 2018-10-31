@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @Date 2018/10/26
  * @Time 8:47
  * @Description Counting Bits
- *求0-numm 之间每个元素中1的个数
+ * 求0-numm 之间每个元素二进制中1的个数
  * bitArray[n] = bitArray[n >>> 1] + ( n & 1 );
  * */
 public class LeetCode338 {

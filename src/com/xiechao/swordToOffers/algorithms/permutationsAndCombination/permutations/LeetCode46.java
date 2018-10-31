@@ -16,11 +16,9 @@ public class LeetCode46 {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if(nums == null || nums.length <=0 ) return result;
-
         helper(nums,0,nums.length-1,result);
         return result;
     }
-
     private void helper(int[] nums, int start, int end, List<List<Integer>> result) {
         if(start == end){
             List<Integer> list = new ArrayList<>();
@@ -34,9 +32,7 @@ public class LeetCode46 {
             Integer temp = nums[i];
             nums[i] = nums[start];
             nums[start] = temp;
-
             helper(nums,start+1,end,result);
-
             temp = nums[i];
             nums[i] = nums[start];
             nums[start] = temp;

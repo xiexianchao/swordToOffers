@@ -10,7 +10,7 @@ import java.util.List;
  * @author: xiechao
  * @Date : 2018/10/22
  * @Time : 10:24
- * @description :
+ * @description :Subsets
  */
 public class LeetCode78 {
     public List<List<Integer>> subsets(int[] nums) {

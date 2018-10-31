@@ -12,6 +12,7 @@ import java.util.List;
  * @Date : 2018/10/22
  * @Time : 9:36
  * @description :Gray Code
+ * 求汉明码
  */
 public class LeetCode89 {
 
