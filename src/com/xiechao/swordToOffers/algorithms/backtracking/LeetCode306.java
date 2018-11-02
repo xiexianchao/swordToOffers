@@ -9,7 +9,7 @@ import java.util.List;
  * @author: xiechao
  * @Date : 2018/10/23
  * @Time : 11:08
- * @description : Additive Number
+ * @description : Additive Number 字符串是否满足斐波那契
  * 题目要求解决大数问题
  */
 public class LeetCode306 {

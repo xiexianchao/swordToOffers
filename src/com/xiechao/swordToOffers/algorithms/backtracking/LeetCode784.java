@@ -11,6 +11,7 @@ import java.util.List;
  * @Date : 2018/10/19
  * @Time : 9:25
  * @description : Letter Case Permutation
+ * 给出一个字符串只包含字母或者数字，可以将字母随意转成大写或者小写，求所有集合
  */
 public class LeetCode784 {
     //10ms

@@ -26,13 +26,11 @@ public class LeetCode526 {
         }
         for (int i = 1; i < N+1; i++) {
             if(used[i]) continue;
-
             used[i] = true;
             if(((i % start) ==0) || (((start % i) ==0))){
                 helper(N,used,start+1);
             }
             used[i] = false;
-
         }
     }
 
