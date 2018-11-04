@@ -11,6 +11,8 @@ import org.junit.Test;
  * I am a student.  --》student. a am I
  */
 public class Problem58 {
+
+    //两次翻转
     public String ReverseSentence(String str) {
         if(str == null || str.length() <= 1) return str;
         String reverse_origin = reverse(str,0,str.length()-1);
@@ -42,9 +44,59 @@ public class Problem58 {
         }
         return sb.toString();
     }
+
+    //两次翻转，数组实现
+    public String ReverseSentence3(String str){
+        if(str == null || str.length() <=1 ) return str;
+        char[] chars = str.toCharArray();
+        reverse3(chars,0,chars.length - 1);
+        int low = 0;
+        int high = 0;
+        while(low < chars.length){
+            if(chars[low] == ' '){
+                low++;
+                high++;
+            }else if(high == chars.length || chars[high] == ' '){
+                reverse3(chars,low,--high);
+                low = ++high;
+            }else
+                high++;
+
+        }
+        return new String(chars);
+    }
+
+    private void reverse3(char[] chars, int low, int high) {
+        if(low > high) return;
+        while(low < high){
+            char temp = chars[high];
+            chars[high] = chars[low];
+            chars[low] = temp;
+            high--;
+            low++;
+        }
+        return;
+    }
+
+    //拆分成单词数组
+    public String ReverseSentence2(String str){
+        if(str == null || str.length() <=1 ) return str;
+        String[] split = str.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = split.length - 1; i >=0 ; i--) {
+            sb.append(split[i]);
+            if(i > 0)
+                sb.append(" ");
+        }
+        return sb.toString();
+    }
+
+
     @Test
     public void test(){
-        System.out.println(ReverseSentence("student. a am I"));
+        System.out.println(ReverseSentence2(" "));
+        System.out.println(ReverseSentence3("" +
+                ". a am I"));
     }
 
 }
