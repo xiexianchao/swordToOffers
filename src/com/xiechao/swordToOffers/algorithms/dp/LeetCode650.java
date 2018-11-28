@@ -26,7 +26,7 @@ public class LeetCode650 {
         }
         return dp[n];
     }
-   
+
     public int minSteps2(int n) {
             if (n <= 1) return 0;
             int[] dp = new int[n + 1];
