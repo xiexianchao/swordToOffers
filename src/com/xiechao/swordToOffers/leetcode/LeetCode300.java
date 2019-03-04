@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @author: xiehcao
@@ -60,10 +61,8 @@ public class LeetCode300 {
         return start;
     }
 
-
-
     @Test
     public void test(){
-        System.out.println(lengthOfLIS2(new int[]{1,3,6,7,9,4,10,5,6}));
+        System.out.println(lengthOfLIS(new int[]{1,3,6,7,9,4,10,5,6}));
     }
 }

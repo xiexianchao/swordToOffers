@@ -52,6 +52,6 @@ public class LeetCode334 {
 
     @Test
     public void test(){
-        System.out.println(increasingTriplet(new int[]{2,1,5,0,4,6}));
+        System.out.println(increasingTriplet(new int[]{5,4,1,6,2,0,3}));
     }
 }
