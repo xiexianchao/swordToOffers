@@ -9,7 +9,8 @@ import java.util.Stack;
  * @author: xiehcao
  * @Date : 2018/9/3
  * @Time : 20:56
- * @description :实质上就是中序遍历，每次取出一个节点，连接成新的树；
+ * @description :实质上就是中序遍历，每次取出一个节点，连接成新的树
+ * 有新的做法，
  */
 public class Leetcode897 {
     private static class TreeNode{
@@ -18,7 +19,7 @@ public class Leetcode897 {
         TreeNode right;
         TreeNode(int x) {val=x;}
     }
-
+//过时
     public TreeNode increasing(TreeNode root){
         if(root == null) return null;
         TreeNode node = root;
