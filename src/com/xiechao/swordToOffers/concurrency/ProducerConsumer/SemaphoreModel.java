@@ -40,7 +40,7 @@ public class SemaphoreModel implements Model {
         public void produe() throws InterruptedException {
             try {
                 NOT_FULL.acquire();
-                MUTEX.acquire();  //颠倒顺序导致私锁
+                MUTEX.acquire();  //颠倒顺序导致死锁
                 Thread.sleep(300 + (long) (Math.random() * 300));
                 Task task = new Task(taskInc.getAndIncrement());
                 queue.offer(task);
