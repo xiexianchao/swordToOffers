@@ -9,6 +9,7 @@ import com.xiechao.swordToOffers.algorithms.TreeNode;
  * @Time 9:21
  * @Description LeetCode235 Lowest Common Ancestor of a Binary Search Tree
  *  在BST中寻找输入两个节点的最低公共祖先节点
+ *  思路：利用BST性质
  *
  */
 public class LeetCode235 {

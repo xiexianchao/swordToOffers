@@ -10,6 +10,7 @@ import com.xiechao.swordToOffers.algorithms.TreeNode;
  * @Description LeetCode101 Symmetric Tree
  *
  * 判断某一棵树是否是镜像二叉树
+ * 思路：判断两棵二叉树是否对称
  */
 public class LeetCode101 {
     public boolean isSymmetric(TreeNode root) {
