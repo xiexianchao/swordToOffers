@@ -1,5 +1,7 @@
 package com.xiechao.swordToOffers.algorithms.palindrome;
 
+import org.junit.Test;
+
 /**
  * @ClassName LeetCode647
  * @Author xiechao
@@ -18,7 +20,6 @@ public class LeetCode647 {
         }
         return sum;
     }
-
     /**
      *
      * @param s 字符串
@@ -32,5 +33,31 @@ public class LeetCode647 {
             res++;
         return res;
     }
+    //dp也可以做
+    public int countSubstrings3(String s){
+        if(s == null || s.length() <= 0) return 0;
+        if(s.length() <= 1) return 1;
+        int sum = 0;
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for (int j = 0; j < s.length() ; j++) {
+            for (int i = 0 ; i <= j ; i++) {
+                if(i == j) dp[i][j] = true;
+                else if(i <= j -2)
+                    dp[i][j] = dp[i+1][j-1] && s.charAt(i) == s.charAt(j);
+                else
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                if(dp[i][j])
+                    sum++;
+            }
+        }
+        return sum;
+    }
+    @Test
+    public void test(){
+        System.out.println(countSubstrings3("aaaaa"));
+    }
+
+
+
 
 }

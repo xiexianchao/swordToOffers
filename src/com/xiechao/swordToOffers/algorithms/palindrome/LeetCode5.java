@@ -56,6 +56,31 @@ public class LeetCode5 {
         }
         return;
     }
+    //dp
+    public String longestPalindrome3(String s) {
+        if(s == null || s.length() <= 0) return "";
+        int left = 0;
+        int right = 0;
+        int max = 0;
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for (int j = 0; j < s.length() ; j++) {
+            for (int i = 0; i <= j ; i++) {
+                if(i == j) dp[i][j] = true;
+                else if(i <= j-2)
+                    dp[i][j] = dp[i+1][j-1] && s.charAt(i) == s.charAt(j);
+                else if(i > j-2)
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                if(dp[i][j] && (j-i+1) >= max){
+                    max = j-i+1;
+                    left = i;
+                    right= j;
+                }
+            }
+        }
+        return s.substring(left,right+1);
+    }
+
+
     @Test
     public void test(){
         System.out.println(longestPalindrome("babad"));
