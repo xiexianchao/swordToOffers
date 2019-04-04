@@ -10,7 +10,7 @@ import com.xiechao.swordToOffers.algorithms.ListNode;
  * @Description TODO
  *
  * LeetCode160  Intersection of Two Linked Lists
- * 求两个链表的第一个公关节点
+ * 求两个链表的第一个公共节点
  *
  */
 public class LeetCode160 {

@@ -90,7 +90,7 @@ public class Problem43 {
 
     @Test
     public void test(){
-        System.out.println(NumberOf1From1To2(1410065408));
+        System.out.println(NumberOf1From1To2(9999));
     }
 
 }
