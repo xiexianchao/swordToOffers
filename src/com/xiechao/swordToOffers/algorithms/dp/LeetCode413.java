@@ -6,7 +6,7 @@ package com.xiechao.swordToOffers.algorithms.dp;
  * @Date 2018/10/30
  * @Time 15:16
  * @Description Arithmetic Slices
- * 显而易见：连续的等差数列有n个元素的时候，则会有(1+2+...+n)个等差子数列。
+ * 显而易见：连续的等差数列有n个元素的时候，则会有(1+2+...+n-2)个等差子数列。
  *
  * {1,2,3} -> {1,2,3} ->1
  *
@@ -14,7 +14,7 @@ package com.xiechao.swordToOffers.algorithms.dp;
  *
  * {1,2,3,4,5} -> {1,2,3,4,5} + {1,2,3,4} + {2,3,4,5} + {1,2,3} + {2,3,4} + {3,4,5} -> 1+2+3 ->6
  *
- * {1,2,....,n} -> ...... -> 1+2+...+n
+ * {1,2,....,n} -> ...... -> 1+2+...+n-2
  */
 public class LeetCode413 {
     public int numberOfArithmeticSlices(int[] A) {

@@ -1,5 +1,9 @@
 package com.xiechao.swordToOffers.algorithms.dp;
 
+import org.junit.Test;
+
+import java.util.concurrent.ForkJoinPool;
+
 /**
  * @ClassName LeetCode486
  * @Author xiechao
@@ -10,31 +14,25 @@ package com.xiechao.swordToOffers.algorithms.dp;
  * 根据网上的答案，简化一下题目：有没有一种选取策略，使得第一个人的和大于等于数组和的一半
  */
 public class LeetCode486 {
-    //网上大神
-    public boolean PredictTheWinner(int[] nums) {
-        int[][] dp = new int[nums.length][nums.length];
-        for (int i = 0; i < dp.length - 1; i++) {
+    //和LeetCode877一样的题目
+    public boolean PredictTheWinner2(int[] nums){
+        if(nums == null || nums.length <= 0) return false;
+        if(nums.length == 1) return true;
+        int[][] dp = new int[nums.length ][nums.length];
+        for (int i = 0; i < nums.length; i++) {
             dp[i][i] = nums[i];
-            dp[i][i+1] = Math.max(nums[i],nums[i+1]);
         }
-        dp[dp.length-1][dp.length-1] = nums[nums.length-1];
-        for (int len = 3; len <= dp.length ; len++) {
-            for (int i = 0; i + len <= dp.length; i++) {
-                int j = i + len - 1;
-                dp[i][j] = Math.max(nums[i] + Math.min(dp[i+1][j-1],dp[i+2][j]),
-                        nums[j] + Math.min(dp[i+1][j-1],dp[i][j-2]));
+        for (int dist = 1; dist < nums.length ; dist++) {
+            for (int i = 0; i < nums.length - dist; i++) {
+                dp[i][i + dist] = Math.max(nums[i]- dp[i+1][i+dist], nums[i + dist] - dp[i][i + dist -1]);
+                System.out.println("dp[" + i + "][" + (i + dist) + "] =" + dp[i][i+dist]);
             }
         }
-        int sum = 0;
-        for (Integer e:nums) {
-            sum += e;
-        }
-        if(dp[0][dp.length - 1] >= (sum+1/2)){
-            return true;
-        }else
-            return false;
-
-        
+        return dp[0][nums.length-1] >0;
+    }
+    @Test
+    public  void test(){
+        System.out.println(PredictTheWinner2(new int[]{1,1}));
     }
 
 }

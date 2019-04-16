@@ -1,5 +1,7 @@
 package com.xiechao.swordToOffers.algorithms.dp;
 
+import org.junit.Test;
+
 /**
  * @ClassName LeetCode714
  * @Author xiechao
@@ -27,5 +29,30 @@ public class LeetCode714 {
         }
         return cash;
     }
+    //这样求得并不是最优解，比如{1,3,7,5,10,3}，3 所有方法错误
+    public int maxProfit3(int[] prices, int fee) {
+        if(prices == null || prices.length <= 1) return 0;
+        int sum = 0;
+        int input = prices[0];
+        for(int i = 1; i < prices.length; i++){
+            if(prices[i] < input){
+                input = prices[i];
+            }else if(prices[i] > (input + fee)){
+                sum += prices[i] - input - fee;
+                input = Integer.MAX_VALUE;
+
+            }else
+                continue;
+
+        }
+        return sum;
+    }
+    @Test
+    public void test(){
+        System.out.println(maxProfit3(new int[]{1,3,2,8,4,9},2));
+        System.out.println(maxProfit3(new int[]{1,3,7,5,10,3},3));
+    }
+
+
 
 }
