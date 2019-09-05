@@ -21,7 +21,7 @@ public class Problem60 {
         }
         for (int i = 2; i <= n ; i++) {
             for (int j = i; j < 6*n+1 ; j++) {
-                for (int k = 1; j - k >= 0 && k <= 6; k++) {
+                for (int k = 1; j - k > 0 && k <= 6; k++) {
                     dp[i][j] += dp[i-1][j-k];
                 }
             }

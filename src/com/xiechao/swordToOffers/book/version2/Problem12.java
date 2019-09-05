@@ -36,9 +36,9 @@ public class Problem12 {
         return false;
     }
     boolean hasPathCore(char[] matrix,int rows,int cols,int i,int j,char[] str,boolean[][] visited){
+        boolean hasPath = false;
         if( index >= str.length)
             return true;
-        boolean hasPath = false;
         if( i >=0 && i < rows && j >=0 && j < cols && matrix[i*cols+j] == str[index] && !visited[i][j]){
             index++;
             visited[i][j] = true;

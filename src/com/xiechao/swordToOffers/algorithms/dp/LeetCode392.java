@@ -2,6 +2,8 @@ package com.xiechao.swordToOffers.algorithms.dp;
 
 import org.junit.Test;
 
+import java.util.concurrent.ForkJoinPool;
+
 /**
  * @ClassName LeetCode392
  * @Author xiechao
@@ -15,6 +17,7 @@ import org.junit.Test;
  *
  */
 public class LeetCode392 {
+    //2ms
     public boolean isSubsequence(String s, String t) {
         if(s == null || s.length() <= 0) return true;
 
@@ -31,9 +34,34 @@ public class LeetCode392 {
         }
         return dp[s.length() - 1] >= 0;
     }
+    //二维dp 262ms
+    public boolean isSubsequence2(String s, String t) {
+        if(s == null || s.length() <= 0) return true;
+        if(t == null || s.length() > t.length()) return false;
+        boolean[][] dp = new boolean[s.length()][t.length()];
+        dp[0][0] = s.charAt(0) == t.charAt(0);
+        for (int i = 1; i < dp[0].length; i++) {
+            dp[0][i] = dp[0][i-1] || s.charAt(0) == t.charAt(i);
+        }
+        for (int i = 1; i < dp.length; i++) {
+            dp[i][0] = false;
+        }
+        for (int i = 1; i < s.length(); i++) {
+            for (int j = 1; j < t.length(); j++) {
+
+                dp[i][j] = ( dp[i-1][j-1] && s.charAt(i) == t.charAt(j)) || dp[i][j-1];
+                System.out.println("dp[ " + i +"][ " + j + "] =" + dp[i][j]);
+            }
+        }
+        return dp[s.length()-1][t.length()-1];
+    }
+
+
     @Test
     public void test(){
-        System.out.println(isSubsequence("aec","abcde"));
+        System.out.println(isSubsequence2("aec","abcde"));
+        System.out.println(isSubsequence2("twn",
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxtxxxxxxxxxxxxxxxxxxxxwxxxxxxxxxxxxxxxxxxxxxxxxxn"));
 
     }
 }

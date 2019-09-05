@@ -95,6 +95,6 @@ public class Problem68 {
         node_8.left = node_7;
         node_8.right = node_9;
 
-        System.out.println(lowestCommonAncestor2(root,node_1,node_2));
+        System.out.println(lowestCommonAncestor2(root,node_1,node_9));
     }
 }

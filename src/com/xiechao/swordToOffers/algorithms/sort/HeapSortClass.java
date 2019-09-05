@@ -26,10 +26,10 @@ public class HeapSortClass {
     }
     private void adjustMaxHeap(int[] nums,int start, int length){
         int temp = nums[start];
-        for (int i = start * 2 + 1; i < length; i = i * 2) {
+        for (int i = start * 2 + 1; i < length-1; i = i * 2+1) {
             if((i+1) < length && nums[i+1] > nums[i])
                 i++;
-            if(nums[start] > nums[i]) break;
+            if(temp >= nums[i]) break;
             nums[start] = nums[i];
             start = i;
         }
@@ -37,7 +37,7 @@ public class HeapSortClass {
     }
     @Test
     public void test(){
-        int[] arr = new int[]{8,7,9,3,0,2,1,4,5,1};
+        int[] arr = new int[]{1,2,3,2,4,6,3,6,9};
         headSort(arr);
         System.out.println(Arrays.toString(arr));
     }

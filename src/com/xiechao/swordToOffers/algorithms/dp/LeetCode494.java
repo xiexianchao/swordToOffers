@@ -2,8 +2,10 @@ package com.xiechao.swordToOffers.algorithms.dp;
 
 import com.sun.org.apache.regexp.internal.RE;
 import org.junit.Test;
+import sun.text.resources.cldr.ii.FormatData_ii;
 
 import java.util.Arrays;
+import java.util.concurrent.ForkJoinPool;
 
 /**
  * @ClassName LeetCode494
@@ -84,12 +86,25 @@ public class LeetCode494 {
         }
         return dp[nums.length - 1][S + 1000];
     }
+    public int findTargetSumWays4(int[] nums, int S) {
+        if (S > 1000 || S < -1000) return 0;
+        int[][] dp = new int[nums.length][2001];
+        dp[0][nums[0] + 1000] = 1;
+        dp[0][1000 - nums[0]] += 1;
+        for (int i = 1; i < nums.length ; i++) {
+            for (int j = 0; j < dp[i].length ; j++) {
+                dp[i][j] = (j >= nums[i]? dp[i-1][j - nums[i]] : 0) + ((j + nums[i]) < dp[i].length?dp[i-1][j + nums[i]]:0);
+            }
+        }
+        return dp[nums.length-1][S+1000];
+    }
 
     @Test
     public void test(){
         System.out.println(findTargetSumWays3(new int[]{0,0,0,0,0,0,0,0,1}
         ,1));
         System.out.println(findTargetSumWays3(new int[]{1,1,1,1,1,},3));
+        System.out.println(findTargetSumWays4(new int[]{1,1,1,1,1,},3));
     }
 
 }

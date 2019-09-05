@@ -61,7 +61,7 @@ public class LeetCode132 {
         for (int i = n-1; i >=0 ; i--) {        //注意需要倒叙遍历
             res[i] = n - 1 - i;             //res[i] 最大分割次数n-1-i
             for (int j = i; j < n ; j++) {
-                if(s.charAt(i) == s.charAt(j) && ((j - i < 2 )|| dp[i+1][j-1])){
+                if(s.charAt(i) == s.charAt(j) && ((j - i < 2 )|| dp[i+1][j-1])){  //如果s[i,j]是回文
                     dp[i][j] = true;
                     if(j == n-1){       //j = n-1 s[i..j]不需要分割
                         res[i] = 0;

@@ -9,7 +9,7 @@ import java.util.List;
  * @author: xiechao
  * @Date : 2018/10/16
  * @Time : 21:09
- * @description :Subsets
+ * @description :Subsets 求数组的所有子序列，数组没有重复数字
  */
 public class LeetCode78 {
     //1ms

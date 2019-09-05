@@ -41,5 +41,6 @@ public class Problem53_1 {
     @Test
     public void test(){
         System.out.println(getMissingNumber(new int[]{0,2,3,4,5,6,7,8}));
+        System.out.println(getMissingNumber(new int[]{1,2,3,4,5,6,7}));
     }
 }

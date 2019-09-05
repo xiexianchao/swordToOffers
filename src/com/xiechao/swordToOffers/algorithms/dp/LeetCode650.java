@@ -8,6 +8,12 @@ import org.junit.Test;
  * @Date 2018/11/27
  * @Time 9:35
  * @Description 2 Keys Keyboard
+ *
+ * 记事本上有一个字符A,
+ * - 复制记事本上所有字符算一个操作
+ * - 粘贴剪切板到记事本上又是一个操作
+ *
+ * 求最少多少个操作可以得到n个A
  */
 public class LeetCode650 {
     //存在冗余计算 75ms

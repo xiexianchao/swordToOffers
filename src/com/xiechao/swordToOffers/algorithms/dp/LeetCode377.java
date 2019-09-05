@@ -97,10 +97,10 @@ public class LeetCode377 {
 
     @Test
     public void test(){
-        int[] array = new int[]{1,2,3};
-        System.out.println(combinationSum4_2(array,32));
-        System.out.println(combinationSum4(array,32));
-        System.out.println(combinationSum4_3(array,32));
+        int[] array = new int[]{1};
+        System.out.println(combinationSum4_2(array,2));
+        System.out.println(combinationSum4(array,2));
+        System.out.println(combinationSum4_3(array,2));
     }
 
 }

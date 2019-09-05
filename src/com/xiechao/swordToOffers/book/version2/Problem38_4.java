@@ -54,6 +54,6 @@ public class Problem38_4 {
 
     @Test
     public void test(){
-        System.out.println(totalNQueens(4));
+        System.out.println(totalNQueens(9));
     }
 }

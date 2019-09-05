@@ -9,6 +9,8 @@ import org.junit.Test;
  * @Time 10:33
  * @Description 反转字符串中的单词
  * I am a student.  --》student. a am I
+ * 把字符串拆成单词数组在异常场景下不可行，比如“”，“You "
+ *
  */
 public class Problem58 {
 
@@ -78,25 +80,12 @@ public class Problem58 {
         return;
     }
 
-    //拆分成单词数组
-    public String ReverseSentence2(String str){
-        if(str == null || str.length() <=1 ) return str;
-        String[] split = str.split(" ");
-        StringBuilder sb = new StringBuilder();
-        for (int i = split.length - 1; i >=0 ; i--) {
-            sb.append(split[i]);
-            if(i > 0)
-                sb.append(" ");
-        }
-        return sb.toString();
-    }
-
-
     @Test
     public void test(){
-        System.out.println(ReverseSentence2(" "));
+
         System.out.println(ReverseSentence3("" +
                 ". a am I"));
+
     }
 
 }
